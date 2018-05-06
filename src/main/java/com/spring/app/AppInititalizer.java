@@ -12,6 +12,7 @@ public class AppInititalizer implements WebApplicationInitializer {
     public void onStartup(ServletContext container) {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         ctx.register(MVCConfigurer.class);
+        ctx.setServletContext(container);
         ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(ctx));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
