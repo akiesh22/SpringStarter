@@ -3,11 +3,11 @@
          xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.websystique.springmvc</groupId>
-    <artifactId>Spring4MVCHelloWorldNoXMLDemo</artifactId>
+    <groupId>com.spring.wc</groupId>
+    <artifactId>wc</artifactId>
     <packaging>war</packaging>
     <version>1.0.0</version>
-    <name>Spring4MVCHelloWorldNoXMLDemo</name>
+    <name>WorldCup</name>
 
     <properties>
         <java-version>1.8</java-version>
@@ -62,18 +62,6 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.10</version>
         </dependency>
-        <!--
-            <dependency>
-        <groupId>com.google.code.gson</groupId>
-        <artifactId>gson</artifactId>
-        <version>2.3.1</version>
-    </dependency>
-     -->
-        <!-- <dependency>
-            <groupId>findbugs</groupId>
-            <artifactId>findbugs</artifactId>
-            <version>1.0.0</version>
-        </dependency> -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
@@ -255,6 +243,11 @@
             <artifactId>cglib</artifactId>
             <version>2.2.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -275,12 +268,22 @@
                     <version>2.4</version>
                     <configuration>
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                        <warName>SpringStarter</warName>
+                        <warName>WorldCup</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>SpringStarter</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>WorldCup</finalName>
     </build>
 </project>
