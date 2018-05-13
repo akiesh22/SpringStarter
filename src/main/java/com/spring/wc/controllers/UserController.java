@@ -21,12 +21,11 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(Model model, HttpSession session, @ModelAttribute("user")User user){
-
-        String sha256hex = Hashing.sha256().hashString(user.getPassword(), StandardCharsets.UTF_8).toString();
-        System.out.println(sha256hex);
-
-        System.out.println("I am here"+user);
-        return "index";
+        if(userService.login(user)!=null){
+            return "";
+        }else{
+            return "index";
+        }
     }
 
 }

@@ -16,3 +16,17 @@ _ReSharper.*
 *.resharper
 *.iml
 .project
+*.class
+#folders#
+/target
+/neoDb*
+/data
+/src/main/webapp/WEB-INF/classes
+*/META-INF/*
+
+# Packaged files #
+*.jar
+*.war
+*.ear
+/target/
+/target/

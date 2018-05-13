@@ -283,6 +283,18 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <server>localhost</server>
+                    <path>/</path>
+                    <systemProperties>
+                        <user.timezone>Etc/UTC</user.timezone>
+                    </systemProperties>
+                </configuration>
+            </plugin>
         </plugins>
         <finalName>WorldCup</finalName>
     </build>
