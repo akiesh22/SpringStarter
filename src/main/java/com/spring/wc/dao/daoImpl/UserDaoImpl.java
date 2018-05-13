@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     @Transactional
     public User login(User user) {
-        Session session=sessionFactory.getCurrentSession();
+        Session session=sessionFactory.openSession();
         Criteria criteria = session.createCriteria(User.class);
         criteria.add(Restrictions.eq("username", user.getUsername()));
         criteria.add(Restrictions.eq("password", SHA.getKey(user.getPassword())));
